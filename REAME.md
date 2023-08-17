@@ -23,10 +23,10 @@ To stop the tool just kill the process.
 
 ## Design description
 
-1. Tool takes takes desired(default is 10) quantity of messages from the source "wss://test-ws.skns.dev/raw-messages". Let's call it "message window".
+1. Tool takes desired(default is 10) quantity of messages from the source "wss://test-ws.skns.dev/raw-messages". Let's call it "message window".
 2. It parses messages to the Python objects and put it to the list with length equal to "message window" length. 
 3. Then the tool sort the list according the "id" keys.
 4. It connects to the target source and sends each list's element with deleting this element from the list.
-The tool sens it to "wss://test-ws.skns.dev/ordered-messages/kovtun".
+The tool sends it to "wss://test-ws.skns.dev/ordered-messages/kovtun".
 5. On the 4th step it also counts time of the sending of the all set of messages from the "message window". And if time is less then previous smallest time, tool will "record" it by sending to the screen.
 
